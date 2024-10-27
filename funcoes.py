@@ -53,6 +53,9 @@ def afundados(frota,tabuleiro):
             
     return navio_afundado
 
-
-
-        
+def posicao_valida(frota, linha, coluna, orientacao, tamanho):
+    posicoes_novas = define_posicoes(linha, coluna, orientacao, tamanho)
+    for posicao in posicoes_novas:
+            if posicao[0] < 0 or posicao[0] >= 10 or posicao[1] < 0 or posicao[1] >= 10:
+                return False
+#posicao[o]=linha,posicao[1]=coluna           
