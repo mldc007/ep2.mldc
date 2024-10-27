@@ -59,3 +59,11 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
             if posicao[0] < 0 or posicao[0] >= 10 or posicao[1] < 0 or posicao[1] >= 10:
                 return False
 #posicao[o]=linha,posicao[1]=coluna           
+    posicoes_ocupadas = []
+    for navios in frota.values():
+        for navio in navios:
+            posicoes_ocupadas.extend(navio) #lista pronta e add de uma vez>>>> add termo a termo com append
+    for posicao in posicoes_novas:
+        if posicao in posicoes_ocupadas:
+            return False  #ocupada
+    return True 
